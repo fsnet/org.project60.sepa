@@ -35,7 +35,7 @@ function sepacustom_civicrm_alter_next_collection_date(&$next_collection_date, $
   $creditor_id = $data['mandate_creditor_id'];
 
   // Fetch the possible cycle days.
-  $cycle_days = \CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 28), $creditor_id);
+  $cycle_days = \CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 31), $creditor_id);
   if (!is_array($cycle_days) || !count($cycle_days)) {
     return;
   }
