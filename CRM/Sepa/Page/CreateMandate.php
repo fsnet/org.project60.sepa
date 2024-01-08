@@ -297,7 +297,7 @@ class CRM_Sepa_Page_CreateMandate extends CRM_Core_Page {
     // add cycle_days per creditor
     $creditor2cycledays = array();
     foreach ($creditors as $creditor_id => $creditor_name) {
-      $creditor2cycledays[$creditor_id] = CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 28), $creditor_id);
+      $creditor2cycledays[$creditor_id] = CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 31), $creditor_id);
     }
     $this->assign("creditor2cycledays", json_encode($creditor2cycledays));
 
