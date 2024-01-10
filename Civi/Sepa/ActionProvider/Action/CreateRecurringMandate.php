@@ -206,7 +206,7 @@ class CreateRecurringMandate extends CreateOneOffMandate {
       $cycle_days = \CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 31), $creditor_id);
 
       // iterate through the days until we hit a cycle day
-      for ($i = 0; $i < 32; $i++) {
+      for ($i = 0; $i <= 31; $i++) {
         if (in_array(date('j', $date), $cycle_days)) {
             // we found our cycle_day!
             return date('j', $date);
