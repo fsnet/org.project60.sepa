@@ -113,7 +113,7 @@ class CRM_Sepa_Page_EditMandate extends CRM_Core_Page {
         CRM_Core_Session::setStatus(sprintf(ts("Cannot read creditor [%s]. Error was: '%s'", array('domain' => 'org.project60.sepa')), $mandate['creditor_id'], $creditor['error_message']), ts('Error', array('domain' => 'org.project60.sepa')), 'error');
       } else {
         $mandate['creditor_name'] = $creditor['label'];
-        $cycle_days = CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 28), $creditor['id']);
+        $cycle_days = CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 31), $creditor['id']);
       }
     }
 
