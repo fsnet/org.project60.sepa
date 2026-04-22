@@ -184,7 +184,7 @@ class CreateRecurringMandate extends CreateOneOffMandate {
    * Get list of collection days
    */
   protected function getCollectionDays() {
-    $list = range(0,28);
+    $list = range(0,29);
     $options = array_combine($list, $list);
     $options[0] = E::ts("as soon as possible");
     return $options;
@@ -215,7 +215,7 @@ class CreateRecurringMandate extends CreateOneOffMandate {
       $date = strtotime(\CRM_Utils_Array::value('start_date', $mandate_data, date('Y-m-d')));
 
       // get cycle days
-      $cycle_days = \CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 28), $creditor_id);
+      $cycle_days = \CRM_Sepa_Logic_Settings::getListSetting("cycledays", range(1, 29), $creditor_id);
 
       // iterate through the days until we hit a cycle day
       for ($i = 0; $i < 31; $i++) {
